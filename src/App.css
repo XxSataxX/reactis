@@ -1,0 +1,524 @@
+
+body {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #050505;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #5656cf; /* Темно-синий фон */ /* Темно-синий фон */
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3), /* Внешняя тень */
+               inset 0px 0px 10px 0px rgba(255, 255, 255, 0.3); /* Внутренняя тень для эффекта глубины */
+  padding: 160px;
+  width: 1600px;
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: 100vh; /* Максимальная высота контейнера */
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+h1 {
+  text-align: center;
+  font-size: 96px;
+  color: #5233da;
+  margin-bottom: 40px;
+  border: 2px solid #dd1414;
+  border-radius:  20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(240, 45, 45)343;
+  border: 2px solid #dd1414;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  width: 80%;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  max-width: 300px;
+  text-overflow: ellipsis;
+}
+.task-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-item button {
+  margin-top: 40px;
+  padding: 96px 160px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 144px;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.edit-button {
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.add-button {
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  background-color: #f5f5f5; /* Добавили фон под формой */
+  padding: 40px; /* Добавили внутренний отступ для фона */
+}
+
+.task-form input[type="text"] {
+  padding: 120px;
+  margin-bottom: 80px;
+  border: 4px solid #e1e1e1;
+  border-radius: 40px;
+  font-size: 144px;
+}
+.task-container {
+  background-color: #f9f9f9;
+  border-radius: 25px 25px 25px 25px; /* Левый верхний, правый верхний, правый нижний, левый нижний */
+  margin-bottom: 10px; /* Уменьшено расстояние между задачами */
+  margin-top: 10px;
+  color: #000000;
+  background-color: #066ac7;
+  border: 3px solid rgb(245, 57, 57);
+  word-wrap: break-word;
+  width: 650px;
+  
+}
+
+.task-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 5px;
+  white-space: nowrap;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.task-text {
+  flex-grow: 1;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+  margin-right: 10px;
+  border: 3px solid rgb(204, 66, 66);
+  background-color: violet;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+
+.task-buttons1 {
+  flex-shrink: 0;
+  background-color: #001f3f; /* Темно-синий фон */
+  color: white; /* Цвет текста */
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  padding: 10px; /* Уменьшим отступы */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-buttons {
+  flex-shrink: 0;
+  background-color: #001f3f; /* Темно-синий фон */
+  color: white; /* Цвет текста */
+  border: none;
+  border-radius: 15px 0px 0px 15px;
+  padding: 10px; /* Уменьшим отступы */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-buttons:hover,
+.task-buttons1:hover {
+  background-color: #003f7f; /* Изменение цвета фона при наведении */
+}
+
+
+.ded {
+  background-color: #767eee;
+  border-radius: 30px;
+  border: 5px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  margin-bottom: 10px; /* Увеличили отступ снизу */
+  background-size: auto ;
+  height: 500px;
+  width: 700px;
+ 
+}
+.glow-on-hover {
+  width: 120px;
+  height: 20px;
+  border: none;
+  outline: none;
+  color: #5df019;
+  background: #b18fa1;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(234, 0, 255), #bb3cd4, #8400ff, #a56bc7, #a200ff, #a03df1, #cc00ff, #ff00c8, #ff00ff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+
+
+.glow-on-hover1 {
+  width: 120px;
+  height: 20px;
+  border: none;
+  outline: none;
+  color: #27c7bf;
+  background: #7ddabb;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover1:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(234, 0, 255), #bb3cd4, #8400ff, #a56bc7, #a200ff, #a03df1, #cc00ff, #ff00c8, #ff00ff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover1:active {
+  color: #000
+}
+
+.glow-on-hover1:active:after {
+  background: transparent;
+}
+
+.glow-on-hover1:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover1:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #020301;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+
+
+
+
+.glow-on-hover2 {
+  width: 120px;
+  height: 20px;
+  border: 1px solid green;
+  outline: none;
+  color: #ecf01f;
+  background: #8d0a10;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover2:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(234, 0, 255), #bb3cd4, #8400ff, #a56bc7, #a200ff, #a03df1, #cc00ff, #ff00c8, #ff00ff);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover2:active {
+  color: #000;
+}
+
+.glow-on-hover2:active:after {
+  background: transparent;
+}
+
+.glow-on-hover2:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover2:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #bd5272;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+
+
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-item.completed button {
+  background-color: #f77171; /* Цвет кнопки для завершенных задач */
+  cursor: not-allowed; /* Запрещаем курсору при наведении */
+  pointer-events: none; /* Отключаем события мыши */
+}
+.task-item span {
+  word-wrap: break-word;
+  width: 1%; /* Фиксированная ширина поля с текстом */
+}
+
+
+
+
+.qwerty {
+  width: 120px;
+  height: 20px;
+  border: 2px solid black;
+  outline: none;
+  color: #ffffff;
+  background: #0bc2e2;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  width: 140px; /* Измените ширину кнопок Завершенные и Незавершенные */
+  height: 40px; /* Измените высоту кнопок Завершенные и Незавершенные */
+}
+
+.qwerty:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(234, 0, 255), #bb3cd4, #8400ff, #a56bc7, #a200ff, #a03df1, #cc00ff, #ff00c8, #ff00ff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.qwerty:active {
+  color: #000;
+}
+
+.qwerty:active:after {
+  background: transparent;
+}
+
+.qwerty:hover:before {
+  opacity: 1;
+}
+
+.qwerty:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: rgb(78, 139, 209);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+
+.qwerty1 {
+  width: 120px;
+  height: 20px;
+  border: 2px solid black;
+  outline: none;
+  color: #000000;
+  background: #0b68e2;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  width: 140px; /* Измените ширину кнопок Завершенные и Незавершенные */
+  height: 40px; /* Измените высоту кнопок Завершенные и Незавершенные */
+  
+  
+}
+
+.qwerty1:before {
+  content: '';
+  background: linear-gradient(45deg, rgb(234, 0, 255), #bb3cd4, #8400ff, #a56bc7, #a200ff, #a03df1, #cc00ff, #ff00c8, #ff00ff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.qwerty1:active {
+  color: #000;
+}
+
+.qwerty1:active:after {
+  background: transparent;
+}
+
+.qwerty1:hover:before {
+  opacity: 1;
+}
+
+.qwerty1:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #0beeee;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+.qq{
+  margin-bottom: 5px;
+  
+}
+
+
+
